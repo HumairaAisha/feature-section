@@ -1,38 +1,126 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&display=swap');
-*{
+
+* {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
-   
 }
 
-body{
-   height: 100vh;
+body {
    font-family: "Outfit", sans-serif;
    background-color: #121826;
    background-image: url(./images/Background_image.svg);
-  
-}
-header{
    display: flex;
    flex-direction: column;
-   gap: 1rem;
-   text-align: center;
-   justify-items: center;
-   justify-content: center;
    align-items: center;
-   margin-top: 3rem;
-   
+   padding: 2rem;
 }
-.title{
+
+/* Header Styles */
+header {
+   text-align: center;
+   margin-bottom: 3rem;
+}
+
+.title {
    font-size: 2.5rem;
    font-weight: 600;
    color: #E5E7EB;
-   max-width: 400px;  
+   max-width: 400px;
 }
-.subtitle{
+
+.subtitle {
    font-size: 1rem;
    font-weight: 400;
    color: #9DA3AE;
-   margin-bottom: 3rem;
+}
+
+/* Features Section */
+.features {
+   display: flex;
+   justify-content: center;
+   gap: 3.5rem;
+   flex-wrap: wrap;  /* Allows cards to wrap on smaller screens */
+   max-width: 1000px;
+}
+
+figure {
+   background-color: #212936;
+   border-radius: 1rem;
+   padding: 1.2rem;
+   color: #E5E7EB;
+   max-width: 315px;
+   flex: 1;  /* Allows flexible growth */
+   min-width: 280px; /* Ensures proper sizing */
+   display: flex;
+   flex-direction: column;
+   
+}
+
+figure h3 {
+   font-size: 1.25rem;
+   font-weight: 600;
+   margin-bottom: 1rem;
+}
+
+figure p {
+   margin-bottom: 1rem;
+   font-size: 1rem;
+   font-weight: 400;
+   max-width: 250px;
+}
+
+img {
+   width: 100%;
+   border-radius: 0.75rem;
+}
+
+.icon {
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   width: 3rem;
+   height: 3rem;
+   margin-top: 1rem;
+   border-radius: 50%;
+   font-size: 1.5rem;
+   margin-bottom: 1rem;
+}
+
+.icon[data-icon-color="light-yellow"] {
+   background-color: #FCEED8;
+}
+
+.icon[data-icon-color="light-blue"] {
+   background-color: #D2D5DA;
+}
+
+.icon[data-icon-color="light-pink"] {
+   background-color: #FBE5E6;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* For Tablet Screens (1024px) */
+@media (max-width: 1024px) {
+   .features {
+      justify-content: space-evenly;
+   }
+
+   figure {
+      flex: 0 1 calc(50% - 1rem); /* Two cards in first row, one in the second */
+   }
+}
+
+/* For Mobile Screens (800px and below) */
+@media (max-width: 800px) {
+   .features {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   figure {
+      flex: 1 1 100%; /* Each card takes full width */
+      max-width: 90%;
+   }
 }
